@@ -1,5 +1,5 @@
-var http = require('http');
-var fs = require('fs');
+let http = require('http');
+let fs = require('fs');
 
 http.createServer(function(req, res) {
 
@@ -25,6 +25,10 @@ http.createServer(function(req, res) {
 
 function hello() {
     console.log("Hello World");
+}
+
+function update(tag) {
+    document.getElementById(tag).innerHTML = 'X';
 }
 
 

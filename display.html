@@ -19,10 +19,10 @@
     <table>
         <tr>
             <th>
-                <button class="boardButton" id="1" onclick=hello(1)>  </button>
+                <button class="boardButton" id="1" onclick=update(1)> X </button>
             </th>
             <th>
-                <button class="boardButton" id="2" onclick=hello(2)>  </button>
+                <button class="boardButton" id="2" onclick=update(2)> O </button>
             </th>
             <th>
                 <button class="boardButton" id="3" onclick=hello(3)>  </button>
@@ -52,13 +52,19 @@
         </tr>
 
     </table>
+    <div class="restartButton">
+    <button id="resetBoard"> Restart game </button>
+    </div>
 
 <div id="scoreboard">
-    <strong> Scoreboard </strong> <br>
-    Wins for Player 1: <br>
-    Wins for Player 2: <br>
+    <strong> Scoreboard </strong> <br> <br>
 
-<button id="reset"> Reset Wins </button>
+    <div id="oneWins"> Wins for Player 1: </div>
+    <div id="twoWins"> Wins for Player 2: </div> <br>
+
+    <div class="restartButton">
+        <button id="reset" onclick=> Reset Wins </button>
+    </div>
 </div>
 
 </body>
