@@ -52,11 +52,15 @@ function checkWin() {
 function win(winner) {
     if (winner == 1) {
         playerOneWins ++; 
-        previousLoser = 2; 
+        previousLoser = 2;
+        let name = "oneWins";
+        setCookie(name);
     }
     else if (winner == 2) {
         playerTwoWins ++;
-        previousLoser = 1; 
+        previousLoser = 1;
+        let name = "twoWins";
+        setCookie(name);
     } 
     gameOver = 1;
 
@@ -73,7 +77,36 @@ function reset() {
         [0, 0, 0],
         [0, 0, 0]
     ];
-    currentPlayer = perviousLoser; 
+    currentPlayer = previousLoser;
     turnNumber = 1; 
     gameOver = 0;
+}
+
+function setCookie(name) {
+    deleteCookie(name);
+    if (name==="oneWins") {
+        document.cookie = name + "=" + getPlayerOneWins() + ";";
+    } else if (name==="twoWins") {
+        document.cookie = name + "=" + getPlayerTwoWins() + ";";
+    }
+}
+
+function getCookie(name) {
+    let cname = name + "=";
+    let cookie = decodeURIComponent(document.cookie);
+    let win = cookie.split(';');
+    for(var i = 0; i < win.length; i++) {
+        var c = win[i];
+        while (c.charAt(0) === ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(cname) === 0) {
+            return c.substring(cname.length, c.length);
+        }
+    }
+    return " ";
+}
+
+function deleteCookie(name) {
+    document.cookie = name + "=;expires= Thu, 01 Jan 1970 00:00:00 UTC;";
 }
