@@ -1,15 +1,35 @@
 @charset "UTF-8";
 
-table, th, tr {
-    border: 5px  solid black;
+th {
+    border: 1px  solid black;
 }
 
 label {
     font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    position: center;
+    font-size: 20px;
 }
 
-#butt1 {
-    height: 300px;
+#title {
+    font-weight: bold;
+    color: darkred;
+    margin-left: auto;
+    margin-right: auto;
+    position: center;
+}
+
+button {
+    height: 50px;
     width: 50px;
-    background-color: cornflowerblue;
+    background-color: gray;
+}
+
+table {
+    position: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 300px;
+    height: 300px;
 }
