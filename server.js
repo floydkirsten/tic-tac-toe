@@ -2,7 +2,9 @@ var http = require('http');
 var fs = require('fs');
 
 http.createServer(function(req, res) {
+
     function callback(err, data) {
+        console.log();
         if (err) throw err;
         let contentType = "text/html"; 
         if (req.url == '/display.css') contentType = "text/css";
