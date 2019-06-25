@@ -37,6 +37,7 @@
         }
     }
 
+<<<<<<< HEAD
     function checkWin() { // Checks to see if a win condition has been met
         if (checkEqual(board[0])) win(board[0][0]); // Checks the first row
         else if (checkEqual(board[1])) win(board[1][0]); // Checks the second row
@@ -50,6 +51,22 @@
         
         if (!gameOver) turnNumber ++; // Advances the turn number while the game is not over
     }
+=======
+function win(winner) {
+    if (winner == 1) {
+        playerOneWins ++; 
+        previousLoser = 2;
+        let name = "oneWins";
+        setCookie(name);
+    }
+    else if (winner == 2) {
+        playerTwoWins ++;
+        previousLoser = 1;
+        let name = "twoWins";
+        setCookie(name);
+    } 
+    gameOver = 1;
+>>>>>>> 44b544dc369005921caba8d0cdeec5e8f1251019
 
     function win(winner) { // Makes changes to the game if a player has won
         if (winner == 1) { // Player 1 is the winner
@@ -73,6 +90,7 @@
         return false; 
     }
 
+<<<<<<< HEAD
     function reset() { // Resets the game board but not the wins
         board = [
             [0, 0, 0],
@@ -83,3 +101,44 @@
         turnNumber = 1; 
         gameOver = 0;
     }
+=======
+function reset() {
+    board = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]
+    ];
+    currentPlayer = previousLoser;
+    turnNumber = 1; 
+    gameOver = 0;
+}
+
+function setCookie(name) {
+    deleteCookie(name);
+    if (name==="oneWins") {
+        document.cookie = name + "=" + getPlayerOneWins() + ";";
+    } else if (name==="twoWins") {
+        document.cookie = name + "=" + getPlayerTwoWins() + ";";
+    }
+}
+
+function getCookie(name) {
+    let cname = name + "=";
+    let cookie = decodeURIComponent(document.cookie);
+    let win = cookie.split(';');
+    for(var i = 0; i < win.length; i++) {
+        var c = win[i];
+        while (c.charAt(0) === ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(cname) === 0) {
+            return c.substring(cname.length, c.length);
+        }
+    }
+    return " ";
+}
+
+function deleteCookie(name) {
+    document.cookie = name + "=;expires= Thu, 01 Jan 1970 00:00:00 UTC;";
+}
+>>>>>>> 44b544dc369005921caba8d0cdeec5e8f1251019

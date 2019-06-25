@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 var http = require('http');
 var fs = require('fs');
 var currentBoard = require('./board.js');
+=======
+let http = require('http');
+let fs = require('fs');
+>>>>>>> 44b544dc369005921caba8d0cdeec5e8f1251019
 
 http.createServer(function(req, res) {
 
@@ -108,6 +113,7 @@ function checkWin() { // Checks to see if a win condition has been met
     if (!gameOver) turnNumber ++; // Advances the turn number while the game is not over
 }
 
+<<<<<<< HEAD
 function win(winner) { // Makes changes to the game if a player has won
     if (winner == 1) { // Player 1 is the winner
         playerOneWins ++; 
@@ -140,5 +146,13 @@ function reset() { // Resets the game board but not the wins
     turnNumber = 1; 
     gameOver = 0;
 }
+=======
+function update(tag) {
+    document.getElementById(tag).innerHTML = 'X';
+}
+
+
+
+>>>>>>> 44b544dc369005921caba8d0cdeec5e8f1251019
 
 

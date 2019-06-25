@@ -1,12 +1,17 @@
 @charset "UTF-8";
 
+body {
+    background-color: whitesmoke;
+}
+
+
 th {
     border: 1px  solid black;
 }
 
 #title {
     font-weight: bold;
-    color: darkred;
+    color: navy;
     font-size: 30px;
     margin-left: auto;
     margin-right: auto;
@@ -15,10 +20,11 @@ th {
     padding-bottom: 15px;
 }
 
-button {
-    height: 50px;
-    width: 50px;
-    background-color: gray;
+.boardButton {
+    height: 90px;
+    width: 90px;
+    font-size: 40px;
+    background-color: aliceblue;
 }
 
 table {
@@ -27,4 +33,35 @@ table {
     margin-left: auto;
     width: 300px;
     height: 300px;
+    padding-bottom: 20px;
+}
+
+#reset {
+    width: 100px;
+}
+
+#turn {
+    font-weight: bold;
+    color: royalblue;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    position: center;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+#scoreboard {
+    margin-left: auto;
+    margin-right: auto;
+    position: center;
+    text-align: center;
+}
+
+.restartButton {
+    margin-left: auto;
+    margin-right: auto;
+    position: center;
+    text-align: center;
+    padding-bottom: 20px;
 }
