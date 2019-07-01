@@ -24,7 +24,7 @@ app.use(express.static('.'));
 app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/display.html');
+    res.sendFile(__dirname + '/index.html');
 });
 
 app.put('/move', (req, res) => {
